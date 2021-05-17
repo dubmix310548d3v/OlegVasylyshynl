@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+    <route id="timerToInRoute">
+        <from uri="kafka:topic?brokers=localhost:9092&amp;maxPollRecords=5000&amp;consumersCount=1&amp;seekTo=beginning&amp;groupId=test2"/>
+        <to uri="myBean"/>
+    </route>
+
+</routes>
