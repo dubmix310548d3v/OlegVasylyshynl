@@ -10,6 +10,6 @@ public class AppConfig {
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(AppConfig.class, args);
         CamelSpringBootApplicationController bean = run.getBean(CamelSpringBootApplicationController.class);
-        bean.blockMainThread();
+        bean.run();
     }
 }
