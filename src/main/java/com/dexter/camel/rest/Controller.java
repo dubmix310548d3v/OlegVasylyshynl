@@ -1,5 +1,6 @@
-package com.dexter.camel;
+package com.dexter.camel.rest;
 
+import com.dexter.camel.bean.Hello;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
 import org.springframework.stereotype.Component;

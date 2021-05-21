@@ -1,4 +1,4 @@
-package com.dexter.camel;
+package com.dexter.camel.model.mongo;
 
 import org.springframework.data.annotation.Id;
 

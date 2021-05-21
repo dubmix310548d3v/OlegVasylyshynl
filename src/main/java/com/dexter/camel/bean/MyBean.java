@@ -1,4 +1,4 @@
-package com.dexter.camel;
+package com.dexter.camel.bean;
 
 import org.apache.camel.Exchange;
 import org.springframework.stereotype.Component;

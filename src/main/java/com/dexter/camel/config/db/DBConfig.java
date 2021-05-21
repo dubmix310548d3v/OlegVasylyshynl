@@ -1,13 +1,8 @@
-package com.dexter.camel;
+package com.dexter.camel.config.db;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -17,7 +12,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -25,7 +19,7 @@ import java.util.Properties;
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackages = "com.dexter.camel",
+        basePackages = "com.dexter.camel.repository.sql",
         entityManagerFactoryRef = "camelEntityManagerFactory",
         transactionManagerRef = "camelTransactionManager"
 )
@@ -72,7 +66,7 @@ public class DBConfig {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setJpaProperties(properties);
-        factory.setPackagesToScan("com.dexter.camel");
+        factory.setPackagesToScan("com.dexter.camel.model.sql");
         factory.setDataSource(dataSource());
 
         return factory;

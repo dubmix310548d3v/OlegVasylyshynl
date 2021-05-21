@@ -1,4 +1,4 @@
-package com.dexter.camel;
+package com.dexter.camel.model.sql;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
