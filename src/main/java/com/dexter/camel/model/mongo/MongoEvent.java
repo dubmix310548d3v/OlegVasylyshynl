@@ -7,19 +7,19 @@ public class MongoEvent {
     @Id
     public String id;
 
-    public String json;
+    public String event;
 
     public MongoEvent() {}
 
-    public MongoEvent(String json) {
-        this.json = json;
+    public MongoEvent(String xml) {
+        this.event = xml;
     }
 
     @Override
     public String toString() {
         return "MongoEvent{" +
                 "id='" + id + '\'' +
-                ", json='" + json + '\'' +
+                ", acts='" + event + '\'' +
                 '}';
     }
 }

@@ -23,3 +23,28 @@ and then go to the browser and type
 localhost:8085/camel/entity
 localhost:8085/camel/entity/mongo
 ```
+
+
+## Events 
+
+xml 
+
+```
+<event>
+  <acts>
+    <act>
+      <action>CREATE_USER</action>
+      <parameters>
+        <parameter field="NAME" value="DEXTER"/>
+      </parameters>
+    </act>
+  </acts>
+</event>
+
+```
+
+java object
+
+```
+Event{acts=[Act{action=CREATE_USER, parameters=[Parameter{field=NAME, value='DEXTER'}]}]}
+```
