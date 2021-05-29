@@ -1,8 +1,9 @@
 package com.dexter.camel.model.mongo;
 
+import com.dexter.camel.model.event.XmlAble;
 import org.springframework.data.annotation.Id;
 
-public class MongoEvent {
+public class MongoEvent implements XmlAble {
 
     @Id
     public String id;

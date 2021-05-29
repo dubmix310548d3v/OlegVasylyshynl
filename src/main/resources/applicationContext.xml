@@ -2,8 +2,19 @@
 <routes xmlns="http://camel.apache.org/schema/spring">
 
     <route id="timerToInRoute">
-        <from uri="kafka:topic?brokers=localhost:9092&amp;maxPollRecords=5000&amp;consumersCount=1&amp;seekTo=beginning&amp;groupId=test2"/>
+        <from uri="kafka:topic?brokers=localhost:9092&amp;maxPollRecords=5000&amp;consumersCount=1&amp;groupId=test2"/>
         <to uri="myBean"/>
+    </route>
+
+    <route id="eventListener">
+        <from uri="kafka:event?brokers=localhost:9092&amp;maxPollRecords=5000&amp;consumersCount=1&amp;groupId=eventListener"/>
+        <to uri="eventProcessor"/>
+        <to uri="kafka:mongo-events?brokers=localhost:9092&amp;groupId=eventListener&amp;autoOffsetReset=latest&amp;consumersCount=1"/>
+    </route>
+
+    <route id="fromMongo">
+        <from uri="kafka:mongo-events?brokers=localhost:9092&amp;maxPollRecords=5000&amp;consumersCount=1&amp;groupId=fromMongo"/>
+        <to uri="mongoListener"/>
     </route>
 
 </routes>

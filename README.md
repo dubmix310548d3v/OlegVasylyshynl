@@ -35,6 +35,7 @@ xml
     <act>
       <action>CREATE_USER</action>
       <parameters>
+        <parameter field="ID" value="12"/>
         <parameter field="NAME" value="DEXTER"/>
       </parameters>
     </act>
@@ -46,5 +47,5 @@ xml
 java object
 
 ```
-Event{acts=[Act{action=CREATE_USER, parameters=[Parameter{field=NAME, value='DEXTER'}]}]}
+Event{acts=[Act{action=CREATE_USER, parameters=[Parameter{field=ID, value='12'}, Parameter{field=NAME, value='DEXTER'}]}]}
 ```

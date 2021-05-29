@@ -1,6 +1,7 @@
 package com.dexter.camel.util;
 
 import com.dexter.camel.model.event.*;
+import com.dexter.camel.model.mongo.MongoEvent;
 import com.thoughtworks.xstream.XStream;
 
 public class XmlUtil {
@@ -13,6 +14,7 @@ public class XmlUtil {
         xStream.alias("parameter", Parameter.class);
         xStream.useAttributeFor(Parameter.class, "field");
         xStream.useAttributeFor(Parameter.class, "value");
+        xStream.alias("MongoEvent", MongoEvent.class);
     }
 
     public static String toXml(XmlAble xmlAble) {
